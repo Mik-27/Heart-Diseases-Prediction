@@ -1,0 +1,9 @@
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+form div input {
+    margin: auto 0;
+    height: 30px;
+}

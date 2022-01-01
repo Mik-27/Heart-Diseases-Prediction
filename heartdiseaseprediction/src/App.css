@@ -1,0 +1,25 @@
+.results {
+    margin: auto;
+}
+
+.at-risk {
+    color: rgb(211, 18, 18);
+}
+
+.at-risk h3 {
+    font-weight: bolder;
+}
+
+.at-risk h3:nth-child(2) {
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.no-risk {
+    color: rgb(3, 189, 3);
+}
+
+.no-risk h3 {
+    font-weight: bolder;
+}
