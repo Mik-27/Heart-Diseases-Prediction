@@ -3,6 +3,7 @@ const fetch = (...args) =>
 	import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const cors = require("cors");
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -78,6 +79,6 @@ app.get("/", (req, res) => {
 	res.sendFile(process.cwd() + "/heartdiseaseprediction/build/index.html");
 });
 
-app.listen(8080, (err) => {
+app.listen(port, (err) => {
 	console.log("Server Running...");
 });
