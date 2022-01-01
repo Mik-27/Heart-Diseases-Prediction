@@ -7,10 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-
-app.get("/", (req, res) => {
-	res.send("Hello");
-});
+app.use(express.static(process.cwd() + "/heartdiseaseprediction/build/"));
 
 app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
@@ -75,6 +72,10 @@ app.post("/getResults", async (req, res) => {
 		.then((result) => {
 			return res.status(200).send({ result });
 		});
+});
+
+app.get("/", (req, res) => {
+	res.sendFile(process.cwd() + "/heartdiseaseprediction/build/index.html");
 });
 
 app.listen(8080, (err) => {
