@@ -3,16 +3,20 @@ const fetch = (...args) =>
 	import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(express.static(process.cwd() + "/heartdiseaseprediction/build/"));
+app.use(express.static("./heartdiseaseprediction/build"));
 
 app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	next();
+});
+
+app.get("*", (req, res) => {
+	res.sendFile(process.cwd() + "/heartdiseaseprediction/build/index.html");
 });
 
 app.post("/getResults", async (req, res) => {
@@ -73,10 +77,6 @@ app.post("/getResults", async (req, res) => {
 		.then((result) => {
 			return res.status(200).send({ result });
 		});
-});
-
-app.get("/", (req, res) => {
-	res.sendFile(process.cwd() + "/heartdiseaseprediction/build/index.html");
 });
 
 app.listen(port, (err) => {

@@ -13,10 +13,6 @@
   },
   "author": "Mihir Thakur",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mik-27/heartdiseaseprediction/issues"
-  },
-  "homepage": "https://github.com/Mik-27/heartdiseaseprediction#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
