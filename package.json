@@ -13,6 +13,7 @@
   },
   "author": "Mihir Thakur",
   "license": "ISC",
+  "homepage": "https://github.com/Mik-27/Heart-Diseases-Prediction/",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
