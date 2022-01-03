@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/form/form";
 import Navbar from "./components/navbar/navbar";
@@ -14,11 +14,6 @@ function App() {
 		setResult(formData["result"]["Results"]["WebServiceOutput0"][0]);
 	};
 
-	useEffect(() => {
-		// sendData();
-		console.log(result);
-	}, []);
-
 	return (
 		<div className="App bg-white">
 			<Navbar />
@@ -31,8 +26,7 @@ function App() {
 					<div className="col-md-6 results">
 						<div className="container text-center">
 							<h1 className="mb-5">Result</h1>
-							{/* <p>{result}</p> */}
-							{result ? (
+							{!result ? (
 								<div>
 									{result["Scored Labels"] === 0 ? (
 										<div className="no-risk">

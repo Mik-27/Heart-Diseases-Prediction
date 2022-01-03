@@ -18,7 +18,6 @@ export default function Form({ sendDataToParent }) {
 
 	const sendData = async (e) => {
 		e.preventDefault();
-		// console.log(data);
 
 		await fetch("http://localhost:8080/getResults", {
 			method: "POST",
@@ -40,10 +39,7 @@ export default function Form({ sendDataToParent }) {
 	};
 
 	return (
-		<form
-			// onSubmit={() => sendData()}
-			className="flex-column mx-5 justify-content-space-between"
-		>
+		<form className="flex-column mx-5 justify-content-space-between">
 			<div>
 				<label className="me-3 my-3">Age:</label>
 				<input name="age" placeholder="56" onChange={handleChange} required />
