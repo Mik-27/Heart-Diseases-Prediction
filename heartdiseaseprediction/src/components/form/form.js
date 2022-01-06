@@ -19,7 +19,7 @@ export default function Form({ sendDataToParent }) {
 	const sendData = async (e) => {
 		e.preventDefault();
 
-		await fetch("http://localhost:8080/getResults", {
+		await fetch("https://healthplus.azurewebsites.net:8000/getResults", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
