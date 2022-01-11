@@ -29,7 +29,7 @@ export default function Form({ sendDataToParent }) {
 		})
 			.then((res) => res.json())
 			.then((result) => {
-				console.log(result);
+				// console.log(result);
 				sendDataToParent(result);
 			});
 	};
