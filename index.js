@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const fetch = (...args) =>
 	import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const cors = require("cors");
@@ -35,7 +36,7 @@ app.post("/getResults", async (req, res) => {
 				//prettier-ignore
 				"Origin": "*",
 				//prettier-ignore
-				"Authorization": "Bearer ohQitYod2q5JGZds0GGFdAgo6c3bmuyF",
+				"Authorization": "Bearer " + process.env.AUTH_KEY,
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({

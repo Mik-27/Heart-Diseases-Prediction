@@ -1,3 +1,4 @@
 node_modules
 web.config
 .vscode
+.env
